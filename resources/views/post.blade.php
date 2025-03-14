@@ -37,6 +37,17 @@
         <p>{{ $comment->lastname }}</p>
         <p>{{ $comment->email }}</p>
         <p>{{ $comment->comment }}</p>
+        
+        <form action="{{ route('supComment', $comment->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?');">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Supprimer</button>
+        </form>
+        <form action="{{ route('ediComment', $comment->id) }}" method="POST">
+            @csrf
+            @method('GET')
+            <button type="submit">Editer</button>
+        </form>
     @endforeach
 
 

@@ -18,3 +18,8 @@ Route::get('/blog/user/{id}', [UserController::class, 'read'])->name('user');
 Route::get('/blog/user/{idUser}/albums', [AlbumController::class, 'readAll'])->name('albums');
 Route::get('/blog/user/{idUser}/album/{idAlbum}', [AlbumController::class, 'readOne'])->name('album');
 Route::post('/addComment', [CommentController::class, 'addComment'])->name('addComment');
+Route::delete('/comment/{id}', [CommentController::class, 'supComment'])->name('supComment');
+Route::get('/comment/{id}/edit', [CommentController::class, 'ediComment'])->name('ediComment');
+Route::get('/comment/{id}', [CommentController::class, 'update'])->name('updateComment');
+
+
